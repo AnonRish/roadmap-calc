@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "source_title": "Alignment Roadmap (AI 2040 supplement)",
+    "source_authors": ["Ryan Greenblatt", "Thomas Larsen"],
+    "source_publisher": "AI Futures Project",
+    "source_url": "https://ai-2040.com/supplements/alignment-roadmap",
+    "retrieved": "2026-10-10",
+    "source_status": "The authors call the supplement a very rough draft of in-progress thinking and describe several figures as best guesses or mostly made up. Numbers here transcribe what the page states; they are not independent estimates.",
+    "encoding": "All numbers are strings so they can be parsed exactly (as fractions)."
+  },
+  "risk_table": [
+    {
+      "speedup": "1.15",
+      "marginal_risk": {"op": "<", "pct": "1"},
+      "p_scheming": {"op": "<", "pct": "1"},
+      "note": "Roughly the early-2026 level; the main concern is flawed evaluations or very effective sandbagging."
+    },
+    {
+      "speedup": "1.5",
+      "marginal_risk": {"op": "=", "pct": "1"},
+      "p_scheming": {"op": "=", "pct": "3"},
+      "note": "Too weak for the central threat models; randomly misbehaving (not competently scheming) models are an increasing contributor."
+    },
+    {
+      "speedup": "3",
+      "marginal_risk": {"op": "=", "pct": "3"},
+      "p_scheming": {"op": "=", "pct": "8"},
+      "note": "Coding is close to automated; most risk is sabotage rather than reliably backdooring future models."
+    },
+    {
+      "speedup": "10",
+      "marginal_risk": {"op": "=", "pct": "7"},
+      "p_scheming": {"op": "=", "pct": "14"},
+      "note": "Small persistent rogue internal deployments become plausible; large ones would likely be outcompeted."
+    },
+    {
+      "speedup": "22",
+      "marginal_risk": {"op": "=", "pct": "12"},
+      "p_scheming": {"op": "=", "pct": "18"},
+      "note": "AI R&D can be fully automated, so all the listed threat models apply."
+    }
+  ],
+  "risk_modifiers": [
+    {"id": "garbled_cot", "factor": "1.5", "note": "Substantially more garbled chain of thought."},
+    {"id": "neuralese", "factor": "2", "note": "Algorithms shift to neuralese."},
+    {"id": "cot_incentivized_to_look_nice", "factor": "1.5", "note": "Techniques that incentivise the chain of thought to look nice, or evidence that it is largely decorative."}
+  ],
+  "botec": {
+    "itai_ai_rd_accel": "3",
+    "superhuman_coder_ai_rd_accel": "15",
+    "min_h_safety_labor_accel": "100",
+    "safety_exponent_itai_to_sc": "0.6",
+    "safety_exponent_min_h": "0.5",
+    "production_labor_exponent": "0.75",
+    "production_compute_exponent": "0.25",
+    "years_itai_to_sc": "1",
+    "years_sc_to_min_h": "1",
+    "harness_months": "6",
+    "stated": {
+      "safety_accel_at_itai": "2.2",
+      "safety_accel_at_superhuman_coder": "6.7",
+      "avg_accel_itai_to_sc_rough": "3",
+      "avg_accel_itai_to_sc_production": "2.8",
+      "extra_years_itai_to_sc": "2",
+      "safety_accel_at_min_h": "10",
+      "avg_accel_sc_to_min_h": "4.8",
+      "extra_years_sc_to_min_h": "3.8",
+      "harness_equivalent_years": "15",
+      "years_equivalent_itai_to_sc": "3",
+      "years_equivalent_sc_to_min_h": "5"
+    }
+  },
+  "analogies_value_split": {
+    "natural_schemers": "3/6",
+    "trained_in_scheming": "1/6",
+    "abstract_analogies": "2/6"
+  },
+  "portfolios": {
+    "phase1": {
+      "label": "Phase 1 (preparation), as of the end of the prep phase, somewhat before ITAI, around 1.5x AI R&D labor acceleration",
+      "areas": [
+        {"id": "control", "label": "Control and control-adjacent measures", "pct": 33, "children": [
+          {"id": "misc_ml_control", "label": "Misc ML/AI-focused control research and implementation", "pct": 21},
+          {"id": "control_software_infra", "label": "Software infrastructure for control", "pct": 4},
+          {"id": "human_evaluation_process", "label": "High-quality human evaluation process robust to scheming", "pct": 6},
+          {"id": "probes_internals_detection", "label": "Probes and similar internals-based detection (control focus)", "pct": 2}
+        ]},
+        {"id": "analogies", "label": "Misalignment analogies", "pct": 15, "children": [
+          {"id": "scheming_analogies", "label": "Analogies of scheming", "pct": 10},
+          {"id": "other_threat_analogies", "label": "Analogies of other threat models", "pct": 2},
+          {"id": "mitigations_on_analogies", "label": "Studying mitigations on analogies", "pct": 2},
+          {"id": "personas_propensities", "label": "AI personas and propensities", "pct": 1}
+        ]},
+        {"id": "usefulness_and_deference", "label": "Elicitation and handoff-viability", "pct": 17, "children": [
+          {"id": "epistemics_conceptual", "label": "AI epistemics and conceptual/philosophical reasoning", "pct": 6},
+          {"id": "apply_ais_to_safety_work", "label": "Applying AIs to the rest of safety work", "pct": 5},
+          {"id": "slowing_down_and_usg", "label": "Preparing to apply AI to slowing down and USG applications", "pct": 3},
+          {"id": "other_handoff_viability", "label": "Other aspects of handoff-viability", "pct": 2},
+          {"id": "specialized_applications", "label": "Other specialised applications (e.g. emulation research)", "pct": 1}
+        ]},
+        {"id": "misc_science", "label": "Misc science and interventions", "pct": 29, "children": [
+          {"id": "interpretability", "label": "Interpretability methods", "pct": 6},
+          {"id": "honesty_elk", "label": "Honesty, eliciting latent knowledge, revealing secrets", "pct": 5},
+          {"id": "generalization", "label": "Studying generalization", "pct": 4},
+          {"id": "deals_with_ais", "label": "Making deals with AIs and getting consent", "pct": 4},
+          {"id": "cot_faithfulness", "label": "Chain-of-thought faithfulness", "pct": 3},
+          {"id": "concerning_behavior", "label": "Looking for concerning model behavior", "pct": 3},
+          {"id": "misc", "label": "Misc", "pct": 4}
+        ]},
+        {"id": "evals_and_demos", "label": "Evaluating and demonstrating capabilities", "pct": 6, "children": [
+          {"id": "capability_demos", "label": "Capability demos", "pct": 4},
+          {"id": "evaluation_surveys_forecasting", "label": "Evaluation, surveys and forecasting", "pct": 2}
+        ]}
+      ]
+    },
+    "phase2": {
+      "label": "Phase 2 (mitigate and elicit), halfway between superhuman coder and superhuman AI researcher",
+      "areas": [
+        {"id": "control", "label": "Control and control-adjacent measures", "pct": 15, "children": [
+          {"id": "misc_ml_control", "label": "Misc ML/AI-focused control research and implementation", "pct": 7},
+          {"id": "control_maintenance", "label": "Maintenance and updates of deployed control measures", "pct": 5},
+          {"id": "control_software_infra", "label": "Software infrastructure", "pct": 1},
+          {"id": "human_evaluation_process", "label": "High-quality human evaluation process robust to scheming", "pct": 2}
+        ]},
+        {"id": "analogies", "label": "Model organisms and analogies", "pct": 21, "children": [
+          {"id": "scheming_analogies", "label": "Analogies for scheming", "pct": 16},
+          {"id": "other_threat_analogies", "label": "Model organisms of other threat models", "pct": 1},
+          {"id": "mitigations_on_analogies", "label": "Studying mitigations, including on model organisms", "pct": 4}
+        ]},
+        {"id": "usefulness_and_deference", "label": "Making AIs differentially more useful for safety work; preparing for deference", "pct": 20, "children": [
+          {"id": "apply_ais_to_safety_work", "label": "Applying AIs to the rest of safety work", "pct": 9},
+          {"id": "epistemics_conceptual", "label": "AI epistemics and conceptual/philosophical reasoning", "pct": 5},
+          {"id": "preparing_for_deference", "label": "Preparing for deference by other means", "pct": 5},
+          {"id": "other_deference", "label": "Other aspects of deference", "pct": 1}
+        ]},
+        {"id": "buying_time_with_usg", "label": "Using AIs to build a lead in partnership with the US government", "pct": 17, "children": []},
+        {"id": "dacc", "label": "Making the world robust to powerful AIs (d/acc)", "pct": 3, "children": []},
+        {"id": "neuralese_decoding", "label": "Neuralese decoding", "pct": 5, "children": []},
+        {"id": "misc_science", "label": "Misc science and understanding of relevant AI properties", "pct": 10, "children": [
+          {"id": "interpretability", "label": "Interpretability methods", "pct": 2},
+          {"id": "deals_with_ais", "label": "Making deals with AIs and getting consent", "pct": 1},
+          {"id": "concerning_behavior", "label": "Looking for concerning model behavior", "pct": 2},
+          {"id": "moonshots", "label": "Moonshots that looked promising earlier", "pct": 3},
+          {"id": "misc", "label": "Misc", "pct": 2}
+        ]},
+        {"id": "evals_and_demos", "label": "Capability evaluation and demonstrations", "pct": 9, "children": [
+          {"id": "scary_demos", "label": "Scary demos", "pct": 7},
+          {"id": "evaluation_surveys_forecasting", "label": "Evaluation, surveys and forecasting", "pct": 2}
+        ]}
+      ]
+    }
+  },
+  "phase3_priorities": [
+    {"rank": "P0", "item": "Buy time using non-proliferation (including demonstrating risk)"},
+    {"rank": "P1", "item": "Prepare for deference (avoiding scheming and handoff-viability)"},
+    {"rank": "P2", "item": "Ensure current and immediate future usage of AIs is safe and secure"},
+    {"rank": "P2", "item": "Better elicitation of AI labor beyond handoff-viability"},
+    {"rank": "P3", "item": "Make the world generally more robust (d/acc)"}
+  ]
+}
